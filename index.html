@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #84898f;
+        }
+        .pilihan {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .pilihan button {
+            background: none;
+            border: none;
+            margin: 0 30px;
+            cursor: pointer;
+        }
+
+        .pilihan img {
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Permainan Batu, Gunting, Kertas</h1>
+    <p>Pilih salah satu: batu, gunting, kertas</p>
+    <div class="pilihan">
+        <button onclick="setUserInput('batu')"><img src="assets/batu.png" alt=""></button>
+        <button onclick="setUserInput('gunting')"><img src="assets/gunting.png" alt=""></button>
+        <button onclick="setUserInput('kertas')"><img src="assets/kertas.png" alt=""></button>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
