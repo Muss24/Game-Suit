@@ -7,15 +7,31 @@ function setUserInput(userInput) {
         alert("Pilihan tidak valid.");
     } else {
         if (userInput === lawan) {
-            alert("Lawan anda memilih " + lawan +", Seri!");
+            Swal.fire({
+                title: "Seri!",
+                text: "Lawan anda memilih " + lawan + ", Seri!",
+                icon: "info",
+                confirmButtonText: "OK"
+            });
         } else if (
             (userInput === "batu" && lawan === "gunting") ||
             (userInput === "gunting" && lawan === "kertas") ||
             (userInput === "kertas" && lawan === "batu")
         ) {
-            alert("Lawan anda memilih " + lawan + ", Anda menang!");
+            Swal.fire({
+                title: "Menang!",
+                text: "Lawan anda memilih " + lawan + ", Anda menang!",
+                icon: "success",
+                confirmButtonText: "OK"
+            });
         } else {
-            alert("Lawan anda memilih " + lawan + ", Anda kalah!");
+            Swal.fire({
+                title: "Kalah!",
+                text: "Lawan anda memilih " + lawan + ", Anda kalah!",
+                icon: "error",
+                confirmButtonText: "OK"
+            });
         }
     }
 }
+
