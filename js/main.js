@@ -2,15 +2,24 @@ function setUserInput(userInput) {
     userInput = userInput.toLowerCase();
     let pilihan = ["batu", "gunting", "kertas"];
     let lawan = pilihan[Math.floor(Math.random() * pilihan.length)];
+    let images = {
+        batu: "../assets/batu.png",
+        gunting: "../assets/gunting.png",
+        kertas: "../assets/kertas.png"
+    };
 
     if (!pilihan.includes(userInput)) {
         alert("Pilihan tidak valid.");
     } else {
+        let lawanImage = images[lawan];
+
         if (userInput === lawan) {
             Swal.fire({
                 title: "Seri!",
                 text: "Lawan anda memilih " + lawan + ", Seri!",
-                icon: "info",
+                imageUrl: lawanImage,
+                imageWidth: 100,
+                imageHeihgt: 100,
                 confirmButtonText: "OK"
             });
         } else if (
@@ -19,16 +28,20 @@ function setUserInput(userInput) {
             (userInput === "kertas" && lawan === "batu")
         ) {
             Swal.fire({
-                title: "Menang!",
                 text: "Lawan anda memilih " + lawan + ", Anda menang!",
-                icon: "success",
+                title: "Menang!",
+                imageUrl: lawanImage,
+                imageWidth: 100,
+                imageHeihgt: 100,
                 confirmButtonText: "OK"
             });
         } else {
             Swal.fire({
-                title: "Kalah!",
                 text: "Lawan anda memilih " + lawan + ", Anda kalah!",
-                icon: "error",
+                title: "Kalah!",
+                imageUrl: lawanImage,
+                imageWidth: 100,
+                imageHeihgt: 100,
                 confirmButtonText: "OK"
             });
         }
